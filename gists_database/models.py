@@ -1,17 +1,10 @@
-class Gist(object):
-    def __init__(self, gist):
-        self.id = gist[0]
-        self.github_id = gist[1]
-        self.html_url = gist[2]
-        self.git_pull_url = gist[3]
-        self.git_push_url = gist[4]
-        self.commits_url = gist[5]
-        self.forks_url = gist[6]
-        self.public = gist[7]
-        self.created_at = gist[8]
-        self.updated_at = gist[9]
-        self.comments = gist[10]
-        self.comments_url = gist[11]
+class Gist:
+    def __init__(self, github_id, description, created_at, updated_at, public):
+        self.github_id = github_id
+        self.description = description
+        self.created_at = created_at
+        self.updated_at = updated_at
+        self.public = public
 
-    def __str__(self):
-        return 'Gist: {}'.format(self.github_id)
+    def __repr__(self):
+        return f"<Gist {self.github_id}>"
